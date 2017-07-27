@@ -109,7 +109,7 @@ body {
 .stage {
   position: relative;
   width: 100%;
-  height: 680px;
+  height: 100%;
 }
 /* image -- start */
 .img-sec {
@@ -118,6 +118,22 @@ body {
   height: 100%;
   overflow: hidden;
   background-color: #ddd;
+}
+.img-figure {
+  position: absolute;
+  width: 320px;
+  height: 360px;
+  padding: 40px;
+  box-sizing: border-box;
+  background-color: #fff;
+}
+figcaption {
+  text-align: center;
+}
+figcaption .img-title {
+  margin-top: 20px;
+  color: #a7a0a2;
+  font-size: 16px;
 }
 /* controller -- start */
 .controller-nav {

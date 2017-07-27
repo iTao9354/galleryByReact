@@ -12,7 +12,7 @@ html, body {
 .stage {
 	.pos(relative);
 	width: @percent;
-	height: 680px;
+	height: @percent;
 }
 
 
@@ -23,6 +23,23 @@ html, body {
 	height: @percent;
 	.overflow;
 	.bg(#ddd);
+}
+.img-figure {
+	.pos(absolute);
+	width: 320px;
+	height: 360px;
+	padding: 40px;
+	box-sizing: border-box;
+	.bg(#fff);
+}
+figcaption {
+	.align;
+
+	.img-title {
+		margin-top: 20px;
+		.color(#a7a0a2);
+		font-size: @font + 3px;
+	}
 }
 
 /* controller -- start */

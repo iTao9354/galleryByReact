@@ -10,49 +10,6 @@
     <body>
     	<div id="content" class="content"></div>
 
-    	<script type="text/babel">
-            // 利用自执行函数，将图片信息转为图片路径
-            var imgDatas = (function genImgUrl() {
-                 var imgNameArr = [],
-                     imgArr = [];
-                for(var i = 0; i < 10; i++) {
-                    imgNameArr.push('g'+i);
-                    imgArr.push('images/'+imgNameArr[i]+'.jpg');
-                }
-                return imgArr;
-            })();
-            console.log(imgDatas);
-
-	      	var GalleryByReactApp = React.createClass({
-                constant: {
-
-                },
-                componentDidMount: function() {
-                    // var _this = this;
-                    // imgArr.forEach(function(value, index) {
-                    //     _this.refs.img.src = value;
-                    // })
-                },
-                render: function() {
-                    return (
-                        <section className="stage">
-                            <section className="img-sec">
-                            </section>
-                            <nav className="controller-nav">
-                                <figure>
-                                    <img ref="img" />
-                                    <figcaption>111</figcaption>
-                                </figure>
-                            </nav>
-                        </section>
-                    );
-                }
-            });
-
-            React.render(
-                <GalleryByReactApp />,
-                document.getElementById('content')
-            );
-	    </script>
+    	<script type="text/babel" src="js/index.js"></script>
     </body>
 </html>
