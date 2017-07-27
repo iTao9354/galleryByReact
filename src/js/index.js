@@ -2,7 +2,7 @@
 * @Author: jinhaiyue
 * @Date:   2017-07-27 14:47:46
 * @Last Modified by:   jinhaiyue
-* @Last Modified time: 2017-07-27 16:47:13
+* @Last Modified time: 2017-07-27 17:21:01
 */
 
 'use strict';
@@ -10,7 +10,7 @@
     var imgDatas = (function genImgUrl() {
          var imgNameArr = [],
              imgArr = [];
-        for(var i = 0; i < 10; i++) {
+        for(var i = 0; i < 15; i++) {
             imgNameArr.push('g'+i);
             imgArr.push({'imageURL':'images/'+imgNameArr[i]+'.jpg','title':'第'+i+'张图片'});
         }
@@ -146,14 +146,14 @@
         // 组件加载后，为每张图片计算位置范围
         componentDidMount: function() {
             // 首先拿到舞台的大小
-            var stageDOM = this.refs.stage,
+            var stageDOM = React.findDOMNode(this.refs.stage),
             	stageW = stageDOM.scrollWidth,
             	stageH = stageDOM.scrollHeight,
             	halfStageW = Math.ceil(stageW / 2),
             	halfStageH = Math.ceil(stageH / 2);
 
             // 获取一个imgFigure的大小
-           	var imgFigureDOM = this.refs.imgFigure0,
+           	var imgFigureDOM = React.findDOMNode(this.refs.imgFigure0),
            		imgW = imgFigureDOM.scrollWidth,
             	imgH = imgFigureDOM.scrollHeight,
             	halfImgW = Math.ceil(imgW / 2),
