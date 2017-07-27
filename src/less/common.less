@@ -1,0 +1,161 @@
+/*
+* @Author: jinhaiyue
+* @Date:   2017-07-27 09:56:45
+* @Last Modified by:   jinhaiyue
+* @Last Modified time: 2017-07-27 09:56:45
+*/
+@charset "utf-8";
+/*定义变量*/
+.mgrPad(@mar,@pad) {
+  margin: @mar;
+  padding: @pad;
+}
+@font: 13px;
+@percent: 100%;
+.noUnderLine(@line:none) {
+  text-decoration: @line;
+}
+@fff: #fff;
+.color(@c) {
+  color: @c;
+}
+.bg(@c) {
+  background-color: @c;
+}
+.rgba(@r,@g,@b,@a) {
+  background-color: rgba(@r,@g,@b,@a);
+  @c: rgba(@r,@g,@b,@a); 
+  @c2 :argb(@c);                    /*处理IE8兼容*/
+  filter:~"progid:DXImageTransform.Microsoft.gradient(enabled='true',startColorstr='@{c2}', endColorstr='@{c2}')";
+  :root #ie9-filter {               /*在IE9下使用hack去除filter*/
+    filter: none;
+  }
+}
+.radius(@r:50%) {
+  -webkit-border-radius:@r;
+  -moz-border-radius:@r;
+  -ms-border-radius:@r;
+  -o-border-radius:@r;
+  border-radius:@r;
+}
+.pos(@pos) {
+  position: @pos;
+}
+.abs50(@percent) {
+  .pos(absolute);
+  left: @percent / 2;
+  top: @percent / 2;
+}
+.overflow(@flow:hidden) {
+  overflow: @flow;
+}
+.dis(@dis) {
+  display: @dis;
+}
+.align(@a:center) {
+  text-align: @a;
+}
+.cursor(@cur:pointer) {
+  cursor: @cur;
+}
+
+
+
+/* 清除默认样式 */
+
+/*字体的unicode：黑体 \9ED1\4F53; 宋体 \5B8B\4F53 ; 楷体 \6977\4F53; 微软雅黑 \5FAE\8F6F\96C5\9ED1*/
+
+* {
+    .mgrPad(0,0);
+    font-size: @font;
+    font-family:  'Microsoft YaHei, Helvetica Neue, Helvetica, PingFang SC, \5FAE\8F6F\96C5\9ED1, \5B8B\4F53, Tahoma, Arial, sans-serif';
+}
+html,
+body {
+    .mgrPad(0,0);
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    .mgrPad(0,0);
+    font-size: @font + 1px;
+    font-weight: normal;    
+}
+
+
+/* 有时不生效，需要再次清除margin和padding */
+ul,
+ol,
+li,
+dl,
+dt,
+dd {
+    .mgrPad(0,0);
+}
+
+li,
+dt,
+dd {
+    list-style: none;
+}
+a {
+  color: #3e3e3e;
+  .noUnderLine;
+  &:focus {
+    outline: none;
+    color: #fb9937;
+  }
+  &:link, &:visited, &:hover, &:active {
+    .noUnderLine;
+  }
+  &:hover {
+    color: #fb9937;
+  }
+}
+
+
+
+/* IE下点击a标签去掉虚线边框 */
+
+img {
+    vertical-align: top;
+}
+
+input,
+button {
+    outline: none;
+    border: none;
+}
+
+/* 浮动 */
+.clearfix {
+    zoom: 1;
+    &:after {
+      display: block;
+      content: '';
+      clear: both;
+    }
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+
+.iconfont {
+  font-family:"iconfont" !important;
+  font-size: @font + 1px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ----------------------------------------------------------------- */
